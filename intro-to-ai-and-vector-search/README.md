@@ -54,4 +54,41 @@ see [wiki](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture
 Responsible for context.
 Processes in paralell.
 #### Decoder
+Uses context provided by encoder to make predictions.
 
+### Sequence to Sequence Models
+A Sequence to Sequene model uses both encoders and decoders. Sequence to sequence models excel at task that involve taking an input and generating a sentence based on that input.
+* summarization
+* translation
+
+Representative models
+[BART](https://huggingface.co/transformers/model_doc/bart)
+[mBART](https://huggingface.co/transformers/model_doc/mbart)
+[Marian](https://huggingface.co/transformers/model_doc/marian)
+[T5](https://huggingface.co/transformers/model_doc/t5)
+
+### Encoder Models
+Encoder models only use the encoder from the Transformer model.  Encoders take an input and return embeddings.
+Encoders have **bi-directional attention** this allows them to use text that comes before and after the target section, making them particularly good at understanding context.
+
+Best suited for tasks requiring an understanding of teh full sentence, such as sentence classification, named entity recognition and extractive question answering (extract answers from documents).
+
+Representative models:
+[ALBERT](https://huggingface.co/docs/transformers/model_doc/albert)
+[BERT](https://huggingface.co/docs/transformers/model_doc/bert)
+[ELECTRA](https://huggingface.co/docs/transformers/model_doc/electra)
+[RoBERTa](https://huggingface.co/docs/transformers/model_doc/roberta)
+
+### Decoder Models
+Decoder models use only the decoder of a Transformer model.  They take embeddings and generate an output based on the context provided by the embeddings.  Pretraining of these models usually revolves around predicting the next word in a sentence.
+
+Decoders are **unidirectional** which means the prediction for each output token can only depend on tokens generated before it.
+
+These models are best suited for tasks envolving text generation.
+
+Representative models:
+
+[GPT](https://huggingface.co/docs/transformers/model_doc/openai-gpt)
+[GPT-2](https://huggingface.co/transformers/model_doc/gpt2)
+[CTRL](https://huggingface.co/transformers/model_doc/ctrl)
+[Transformer XL](https://huggingface.co/transformers/model_doc/transfo-xl)
